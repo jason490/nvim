@@ -90,6 +90,7 @@ require("lazy").setup({
     'mbbill/undotree',
     'tpope/vim-fugitive',
     'RRethy/vim-illuminate',
+    'andweeb/presence.nvim',
     {
         "folke/tokyonight.nvim",
         lazy = false,    -- make sure we load this during startup if it is your main colorscheme
