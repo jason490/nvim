@@ -12,7 +12,7 @@ local function my_on_attach(bufnr)
     -- custom mappings
     vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,        opts('Up'))
     vim.keymap.set('n', '<leader>pv', api.tree.toggle, {desc = "toggle dir tree"})
-    vim.keymap.set('n', '<CR>', function() api.node.open.edit() api.tree.close() end, {desc = "toggle dir tree"})
+    vim.keymap.set('n', '<leader>po', api.tree.open, {desc = "open dir tree"})
   end
 
   -- pass to setup along with your other options
