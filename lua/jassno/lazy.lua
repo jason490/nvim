@@ -97,6 +97,7 @@ require("lazy").setup({
         ft = { "markdown" },
     },
     'mbbill/undotree',
+    'github/copilot.vim',
     'lervag/vimtex',
     'tpope/vim-fugitive',
     'RRethy/vim-illuminate',
