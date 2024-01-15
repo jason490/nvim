@@ -87,7 +87,17 @@ require("lazy").setup({
             require('glance').setup({})
         end
     },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "cd app && yarn install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+    },
     'mbbill/undotree',
+    'lervag/vimtex',
     'tpope/vim-fugitive',
     'RRethy/vim-illuminate',
     'andweeb/presence.nvim',
