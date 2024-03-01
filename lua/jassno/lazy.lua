@@ -59,29 +59,6 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" }
     },
     {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        config = function()
-            require("nvim-tree").setup {
-                sort = {
-                    sorter = "case_sensitive",
-                },
-                view = {
-                    adaptive_size = true,
-                },
-                renderer = {
-                    group_empty = true,
-                },
-                filters = {
-                    dotfiles = true,
-                }, }
-        end,
-    },
-    {
         'dnlhc/glance.nvim',
         config = function ()
             require('glance').setup({})

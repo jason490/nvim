@@ -1,5 +1,5 @@
 
-local function my_on_attach(bufnr)
+--[[ local function my_on_attach(bufnr)
     local api = require "nvim-tree.api"
 
     local function opts(desc)
@@ -21,3 +21,4 @@ local function my_on_attach(bufnr)
     on_attach = my_on_attach,
     ---
   }
+--]]
