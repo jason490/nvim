@@ -60,7 +60,7 @@ require("lazy").setup({
     },
     {
         'dnlhc/glance.nvim',
-        config = function ()
+        config = function()
             require('glance').setup({})
         end
     },
@@ -74,11 +74,17 @@ require("lazy").setup({
         ft = { "markdown" },
     },
     'mbbill/undotree',
-    'github/copilot.vim',
     'lervag/vimtex',
     'tpope/vim-fugitive',
     'RRethy/vim-illuminate',
-    'andweeb/presence.nvim',
+    {
+        'andweeb/presence.nvim',
+       --  config = function()
+       --     require("presence").setup({
+       --         log_level = "debug",
+       --     })
+       -- end,
+    },
     {
         "folke/tokyonight.nvim",
         lazy = false,    -- make sure we load this during startup if it is your main colorscheme
