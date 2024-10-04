@@ -5,7 +5,6 @@ require 'nvim-treesitter.configs'.setup {
         "go",
         "lua",
         "cpp",
-        "java",
         "python",
         "css",
         "templ",
