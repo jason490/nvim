@@ -25,6 +25,11 @@ require("lazy").setup({
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
     --
+    { 'wakatime/vim-wakatime',            lazy = false },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
     {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
@@ -60,7 +65,7 @@ require("lazy").setup({
     },
     {
         'dnlhc/glance.nvim',
-        config = function ()
+        config = function()
             require('glance').setup({})
         end
     },
@@ -74,21 +79,21 @@ require("lazy").setup({
         ft = { "markdown" },
     },
     {
-      "christoomey/vim-tmux-navigator",
-      cmd = {
-        "TmuxNavigateLeft",
-        "TmuxNavigateDown",
-        "TmuxNavigateUp",
-        "TmuxNavigateRight",
-        "TmuxNavigatePrevious",
-      },
-      keys = {
-        { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-        { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-        { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-        { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-        { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-      },
+        "christoomey/vim-tmux-navigator",
+        cmd = {
+            "TmuxNavigateLeft",
+            "TmuxNavigateDown",
+            "TmuxNavigateUp",
+            "TmuxNavigateRight",
+            "TmuxNavigatePrevious",
+        },
+        keys = {
+            { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+            { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+            { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+            { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+            { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+        },
     },
     'mbbill/undotree',
     'lervag/vimtex',
