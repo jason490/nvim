@@ -90,7 +90,16 @@ require("lazy").setup({
     'lervag/vimtex',
     'tpope/vim-fugitive',
     'RRethy/vim-illuminate',
-    'andweeb/presence.nvim',
+    -- 'andweeb/presence.nvim',
+    -- {
+    --     'IogaMaster/neocord',
+    --     event = "VeryLazy"
+    -- },
+    {
+        'vyfor/cord.nvim',
+        build = ':Cord update',
+        -- opts = {}
+    },
     'tikhomirov/vim-glsl',
     {
         "folke/tokyonight.nvim",
