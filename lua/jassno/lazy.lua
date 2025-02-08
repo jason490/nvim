@@ -25,7 +25,7 @@ require("lazy").setup({
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
     --
-    { 'wakatime/vim-wakatime',            lazy = false },
+    -- { 'wakatime/vim-wakatime',            lazy = false },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
@@ -91,15 +91,15 @@ require("lazy").setup({
     'tpope/vim-fugitive',
     'RRethy/vim-illuminate',
     -- 'andweeb/presence.nvim',
-    -- {
-    --     'IogaMaster/neocord',
-    --     event = "VeryLazy"
-    -- },
     {
-        'vyfor/cord.nvim',
-        build = ':Cord update',
-        -- opts = {}
+        'IogaMaster/neocord',
+        event = "VeryLazy"
     },
+    -- {
+    --     'vyfor/cord.nvim',
+    --     build = ':Cord update',
+    --     -- opts = {}
+    -- },
     'tikhomirov/vim-glsl',
     {
         "folke/tokyonight.nvim",
