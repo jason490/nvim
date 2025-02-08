@@ -8,7 +8,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "gopls", "html", "cssls", "lua_ls", "templ" },
+    ensure_installed = { "lua_ls", "clangd" },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -43,3 +43,23 @@ cmp.setup({
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
     })
 })
+
+local cmp_nvim_lsp = require "cmp_nvim_lsp"
+require("lspconfig").clangd.setup {
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    cmd = {
+        "clangd",
+        "--offset-encoding=utf-16",
+    },
+}
+
+local opts = { noremap=true, silent=true }
+
+local function quickfix()
+    vim.lsp.buf.code_action({
+        filter = function(a) return a.isPreferred end,
+        apply = true
+    })
+end
+
+vim.keymap.set('n', '<leader>qf', quickfix, opts)

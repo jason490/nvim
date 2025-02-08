@@ -25,6 +25,11 @@ require("lazy").setup({
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
     --
+    { 'wakatime/vim-wakatime',            lazy = false },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
     {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
@@ -65,26 +70,37 @@ require("lazy").setup({
         end
     },
     {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        build = "cd app && yarn install",
-        init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
-        ft = { "markdown" },
+        "christoomey/vim-tmux-navigator",
+        cmd = {
+            "TmuxNavigateLeft",
+            "TmuxNavigateDown",
+            "TmuxNavigateUp",
+            "TmuxNavigateRight",
+            "TmuxNavigatePrevious",
+        },
+        keys = {
+            { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+            { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+            { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+            { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+            { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+        },
     },
     'mbbill/undotree',
     'lervag/vimtex',
     'tpope/vim-fugitive',
     'RRethy/vim-illuminate',
+    -- 'andweeb/presence.nvim',
+    -- {
+    --     'IogaMaster/neocord',
+    --     event = "VeryLazy"
+    -- },
     {
-        'andweeb/presence.nvim',
-       --  config = function()
-       --     require("presence").setup({
-       --         log_level = "debug",
-       --     })
-       -- end,
+        'vyfor/cord.nvim',
+        build = ':Cord update',
+        -- opts = {}
     },
+    'tikhomirov/vim-glsl',
     {
         "folke/tokyonight.nvim",
         lazy = false,    -- make sure we load this during startup if it is your main colorscheme
