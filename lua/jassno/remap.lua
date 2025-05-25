@@ -26,4 +26,4 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = "jump to previous quic
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "jump to next location list" })
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "jump to previous location list" })
 
-vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float(0, {scope=\"line\"})<CR>", {desc="diagnostic"})
+vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float(0, {scope=\"line\"})<CR>", { desc = "diagnostic" })

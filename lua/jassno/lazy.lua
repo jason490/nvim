@@ -17,15 +17,25 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- lspzero dependencies
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
-    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+    {
+        "mason-org/mason.nvim",
+        opts = {}
+    }, {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+        { "mason-org/mason.nvim", opts = {} },
+        "neovim/nvim-lspconfig",
+    },
+},
+    -- { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
-    { 'L3MON4D3/LuaSnip' },
+    { 'hrsh7th/cmp-buffer' },
+    -- { 'L3MON4D3/LuaSnip' },
     --
-    { 'wakatime/vim-wakatime',            lazy = false },
+    -- { 'wakatime/vim-wakatime',            lazy = false },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
@@ -90,11 +100,6 @@ require("lazy").setup({
     'lervag/vimtex',
     'tpope/vim-fugitive',
     'RRethy/vim-illuminate',
-    -- 'andweeb/presence.nvim',
-    -- {
-    --     'IogaMaster/neocord',
-    --     event = "VeryLazy"
-    -- },
     {
         'vyfor/cord.nvim',
         build = ':Cord update',
