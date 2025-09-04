@@ -2,19 +2,17 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     -- Replace the language servers listed here
     -- with the ones you want to install
-    ensure_installed = { 'lua_ls', 'clangd' },
+    ensure_installed = { 'lua_ls', 'clangd', 'gopls' },
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({})
         end,
     },
 })
-
 -- Add cmp_nvim_lsp capabilities settings to lspconfig
 -- This should be executed before you configure any language server
 local lspconfig_defaults = require('lspconfig').util.default_config
-lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-    'force',
+lspconfig_defaults.capabilities = vim.tbl_deep_extend( 'force',
     lspconfig_defaults.capabilities,
     require('cmp_nvim_lsp').default_capabilities()
 )
@@ -70,7 +68,8 @@ cmp.setup({
             elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
                 fallback()
             else
-                cmp.complete()
+                -- cmp.complete()
+                fallback()
             end
         end, { 'i', 's' }),
 
@@ -78,6 +77,8 @@ cmp.setup({
         ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
     })
 })
+
+vim.filetype.add({ extension = { templ = "templ" } })
 
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
 require("lspconfig").clangd.setup {
