@@ -73,6 +73,15 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" }
     },
     {
+        "lervag/vimtex",
+        lazy = false, -- we don't want to lazy load VimTeX
+        -- tag = "v2.15", -- uncomment to pin to a specific release
+        init = function()
+            -- VimTeX configuration goes here, e.g.
+            vim.g.vimtex_view_method = "zathura"
+        end
+    },
+    {
         'dnlhc/glance.nvim',
         config = function()
             require('glance').setup({})
@@ -96,8 +105,8 @@ require("lazy").setup({
         },
     },
     'mbbill/undotree',
-    'lervag/vimtex',
     'tpope/vim-fugitive',
+    'tpope/vim-obsession',
     'RRethy/vim-illuminate',
     {
         'vyfor/cord.nvim',
