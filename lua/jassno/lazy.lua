@@ -15,7 +15,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- lspzero dependencies
     {
         "mason-org/mason.nvim",
         opts = {}
@@ -27,17 +26,30 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
     },
 },
-    -- { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
     { 'hrsh7th/cmp-buffer' },
-    -- { 'L3MON4D3/LuaSnip' },
-    --
-    -- { 'wakatime/vim-wakatime',            lazy = false },
+    { 'wakatime/vim-wakatime', lazy = false },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+    {
+        "Exafunction/windsurf.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        -- config = function()
+        --     require("codeium").setup({
+        --         enable_cmp_source = false,
+        --         virtual_text = {
+        --             enabled = true,
+        --             manual = false,
+        --         }
+        --     })
+        -- end
     },
     {
         'nvim-telescope/telescope.nvim',
