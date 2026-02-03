@@ -9,7 +9,6 @@ require 'nvim-treesitter.configs'.setup {
         "css",
         "templ",
         "html",
-        "latex",
         "markdown",
         "markdown_inline" },
 
