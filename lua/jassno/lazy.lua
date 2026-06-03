@@ -36,34 +36,17 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     {
-        "Exafunction/windsurf.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-        -- config = function()
-        --     require("codeium").setup({
-        --         enable_cmp_source = false,
-        --         virtual_text = {
-        --             enabled = true,
-        --             manual = false,
-        --         }
-        --     })
-        -- end
-    },
-    {
         'nvim-telescope/telescope.nvim',
-        branch = '0.1.x',
+        version = '*',
         dependencies = {
             'nvim-lua/plenary.nvim',
+            -- optional but recommended
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         }
     },
     {
-        -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter-textobjects',
-        },
+        lazy = false,
         build = ':TSUpdate',
     },
     {
